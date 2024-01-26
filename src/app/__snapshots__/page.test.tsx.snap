@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home should match snapshot 1`] = `
+<div>
+  <main
+    class="MuiBox-root css-0"
+  >
+    <div
+      class="MuiBox-root css-j7qwjs"
+    >
+      <h1
+        class="MuiTypography-root MuiTypography-h1 css-o2w69a-MuiTypography-root"
+      >
+        Welcome!
+      </h1>
+      <div
+        class="MuiBox-root css-1u72um6"
+      >
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          This is a simple game where you have to guess the capital of a country. You are given a set of countries and capitals. Match each country with its capital.
+        </p>
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          The game lasts until all countries are matched with their capitals.
+        </p>
+        <p
+          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          Get 7 points for each correct answer. Lose 5 points for each wrong.
+        </p>
+      </div>
+      <a
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium css-sghohy-MuiButtonBase-root-MuiButton-root"
+        href="/game"
+        tabindex="0"
+      >
+        Start new game
+        <span
+          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </a>
+    </div>
+  </main>
+</div>
+`;
