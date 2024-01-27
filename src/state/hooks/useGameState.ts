@@ -16,14 +16,14 @@ export const useGameState = () => {
   const [selectedCapital, setSelectedCapital] = useState<Capital | null>();
 
   const {
-    state: { score, countries, progress },
+    state: { score, data, countries, progress },
     actions,
   } = gameReducer;
 
   useEffect(() => {
     // TODO: Refactor, too much is happening in a single useEffect. Hard to read.
     if (selectedCountry && selectedCapital) {
-      const match = countries.find(
+      const match = data.find(
         (x) => x.capital === selectedCapital && x.name === selectedCountry
       );
 
@@ -36,7 +36,7 @@ export const useGameState = () => {
         });
 
         setTimeout(() => {
-          actions.removeItem(match);
+          actions.removeItems(match);
           actions.setGuess(null);
 
           setSelectedCapital(null);
@@ -64,7 +64,7 @@ export const useGameState = () => {
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedCountry, selectedCapital, countries, actions]);
+  }, [selectedCountry, selectedCapital, data, actions]);
 
   useEffect(() => {
     if (progress === "in-progress" && !countries.length) {

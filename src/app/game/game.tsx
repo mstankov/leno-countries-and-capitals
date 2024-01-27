@@ -7,11 +7,12 @@ import { useGetCountries } from "src/api/hooks";
 import ItemCardListContainer from "./components/ItemCardListContainer";
 import Layout from "./layout";
 import { useGame } from "src/state/contexts/GameContext";
+import { shuffleData } from "src/utils/utils";
 
 function Game() {
-  const { data } = useGetCountries();
+  const { data: queryData } = useGetCountries();
   const {
-    state: { guess, score, progress, countries },
+    state: { guess, score, progress, countries, capitals, data },
     actions,
     selectedCapital,
     selectedCountry,
@@ -20,10 +21,14 @@ function Game() {
   } = useGame();
 
   useEffect(() => {
-    if (data && countries.length === 0 && progress === "not-started") {
-      actions.setCountries(data);
+    if (queryData && data.length === 0 && progress === "not-started") {
+      actions.setData({
+        data: queryData,
+        countries: shuffleData(queryData.map(({ name }) => name)),
+        capitals: shuffleData(queryData.map(({ capital }) => capital)),
+      });
     }
-  }, [data, actions, countries.length, progress]);
+  }, [queryData, actions, data.length, progress]);
 
   const theme = useTheme();
 
@@ -57,23 +62,23 @@ function Game() {
               title="Countries"
               data-testid="countries-list"
             >
-              {countries.map(({ name }) => (
+              {countries.map((country) => (
                 <ItemCard
-                  selected={name === selectedCountry}
-                  key={name}
-                  value={name}
+                  selected={country === selectedCountry}
+                  key={country}
+                  value={country}
                   onClick={onCountrySelectHandler}
                   disabled={isItemDisabled}
                   sx={{
                     ...(!!guess &&
-                      guess.country.name === name &&
+                      guess.country.name === country &&
                       getItemGuessBackground(guess.success, theme)),
                   }}
                 />
               ))}
             </ItemCardListContainer>
             <ItemCardListContainer title="Capitals" data-testid="capitals-list">
-              {countries.map(({ capital }) => (
+              {capitals.map((capital) => (
                 <ItemCard
                   selected={capital === selectedCapital}
                   disabled={isItemDisabled}

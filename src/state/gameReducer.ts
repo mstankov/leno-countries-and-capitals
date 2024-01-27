@@ -1,10 +1,12 @@
 import { INITIAL_SCORE } from "src/api/constants";
-import { CountryDto } from "src/api/types";
+import { Capital, Country, CountryDto } from "src/api/types";
 
 export type GameProgress = "in-progress" | "done" | "not-started";
 export type GameState = {
   score: number;
-  countries: CountryDto[];
+  data: CountryDto[];
+  countries: Country[];
+  capitals: Capital[];
   progress: GameProgress;
   guess: {
     country: CountryDto;
@@ -14,15 +16,19 @@ export type GameState = {
 
 export type GameAction =
   | {
-      type: "REMOVE_ITEM";
+      type: "REMOVE_ITEMS";
       payload: CountryDto;
     }
   | {
       type: "RESET_GAME";
     }
   | {
-      type: "SET_COUNTRIES";
-      payload: CountryDto[];
+      type: "SET_DATA";
+      payload: {
+        data: CountryDto[];
+        countries: Country[];
+        capitals: Capital[];
+      };
     }
   | {
       type: "SET_GUESS";
@@ -44,7 +50,9 @@ export const INITIAL_STATE: GameState = {
   score: INITIAL_SCORE,
   progress: "not-started", // can be used to perform redirection logic if user tries to access /game page without having a game in progress
   guess: null,
+  data: [],
   countries: [],
+  capitals: [],
 };
 
 export const gameReducer = (
@@ -52,17 +60,16 @@ export const gameReducer = (
   action: GameAction
 ): GameState => {
   switch (action.type) {
-    case "REMOVE_ITEM":
+    case "REMOVE_ITEMS":
       return {
         ...state,
-        countries: state.countries.filter(
-          (x) => x.name !== action.payload.name
-        ),
+        countries: state.countries.filter((x) => x !== action.payload.name),
+        capitals: state.capitals.filter((x) => x !== action.payload.capital),
       };
-    case "SET_COUNTRIES":
+    case "SET_DATA":
       return {
         ...state,
-        countries: action.payload,
+        ...action.payload,
       };
     case "SET_GUESS":
       return {

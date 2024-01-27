@@ -9,6 +9,7 @@ const ItemCardSkeleton = () => {
       sx={{
         p: 3,
         backgroundColor: "white",
+        borderRadius: 2,
       }}
     />
   );

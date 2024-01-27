@@ -1,19 +1,20 @@
 import { useMemo, useReducer } from "react";
 import { GameProgress, INITIAL_STATE, gameReducer } from "../gameReducer";
-import { CountryDto } from "src/api/types";
+import { Capital, Country, CountryDto } from "src/api/types";
 
 export const useGameReducer = () => {
   const [state, dispatch] = useReducer(gameReducer, INITIAL_STATE);
 
   const actions = useMemo(() => {
-    const removeItem = (payload: CountryDto) => {
-      dispatch({ type: "REMOVE_ITEM", payload });
-    };
     const resetGame = () => {
       dispatch({ type: "RESET_GAME" });
     };
-    const setCountries = (payload: CountryDto[]) => {
-      dispatch({ type: "SET_COUNTRIES", payload });
+    const setData = (payload: {
+      data: CountryDto[];
+      countries: Country[];
+      capitals: Capital[];
+    }) => {
+      dispatch({ type: "SET_DATA", payload });
     };
     const setGuess = (
       payload: {
@@ -29,14 +30,17 @@ export const useGameReducer = () => {
     const setProgress = (payload: GameProgress) => {
       dispatch({ type: "SET_PROGRESS", payload });
     };
+    const removeItems = (payload: CountryDto) => {
+      dispatch({ type: "REMOVE_ITEMS", payload });
+    };
 
     return {
-      removeItem,
       resetGame,
-      setCountries,
+      setData,
       setGuess,
       setScore,
       setProgress,
+      removeItems,
     };
   }, [dispatch]);
 

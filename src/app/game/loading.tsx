@@ -13,6 +13,7 @@ export default function Loading() {
           alignSelf: "center",
           mb: 5,
           backgroundColor: "white",
+          borderRadius: 2,
         }}
       />
 
@@ -35,6 +36,7 @@ export default function Loading() {
             alignSelf: "center",
             mb: 5,
             backgroundColor: "white",
+            borderRadius: 2,
           }}
         />
         <Box display="flex" justifyContent="space-between">
