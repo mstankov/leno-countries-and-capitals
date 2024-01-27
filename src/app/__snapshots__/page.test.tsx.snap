@@ -6,38 +6,78 @@ exports[`Home should match snapshot 1`] = `
     class="MuiBox-root css-0"
   >
     <div
-      class="MuiBox-root css-j7qwjs"
+      class="MuiBox-root css-xi606m"
     >
-      <h1
-        class="MuiTypography-root MuiTypography-h1 css-o2w69a-MuiTypography-root"
+      <h2
+        class="MuiTypography-root MuiTypography-h2 css-co5uzt-MuiTypography-root"
+        data-testid="home-page-title"
       >
-        Welcome!
-      </h1>
+        Countries and Capitals
+      </h2>
       <div
-        class="MuiBox-root css-1u72um6"
+        class="MuiBox-root css-1821gv5"
       >
-        <p
-          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        <div
+          class="MuiBox-root css-da1mpa"
         >
-          This is a simple game where you have to guess the capital of a country. You are given a set of countries and capitals. Match each country with its capital.
-        </p>
-        <p
-          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-        >
-          The game lasts until all countries are matched with their capitals.
-        </p>
-        <p
-          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-        >
-          Get 7 points for each correct answer. Lose 5 points for each wrong.
-        </p>
+          <h4
+            class="MuiTypography-root MuiTypography-h4 css-pxw7rc-MuiTypography-root"
+          >
+            Rules
+          </h4>
+          <h6
+            class="MuiTypography-root MuiTypography-subtitle2 css-ati914-MuiTypography-root"
+          >
+            Match each country with its respective capital
+          </h6>
+          <h6
+            class="MuiTypography-root MuiTypography-subtitle2 css-ati914-MuiTypography-root"
+          >
+            The game lasts until all countries are matched with their capitals
+          </h6>
+          <div
+            class="MuiBox-root css-r9sjpm"
+          >
+            <span
+              class="MuiTypography-root MuiTypography-caption css-1sn4lm3-MuiTypography-root"
+            >
+              A correct guess adds
+               
+              <span
+                class="MuiTypography-root MuiTypography-caption css-yzvdu9-MuiTypography-root"
+              >
+                7
+              </span>
+               
+              points
+            </span>
+            <span
+              class="MuiTypography-root MuiTypography-caption css-1sn4lm3-MuiTypography-root"
+            >
+              An incorrect guess subtracts
+               
+              <span
+                class="MuiTypography-root MuiTypography-caption css-yzvdu9-MuiTypography-root"
+              >
+                5
+              </span>
+               
+              points
+            </span>
+          </div>
+        </div>
       </div>
+    </div>
+    <div
+      class="MuiBox-root css-1h0qwx1"
+    >
       <a
-        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium css-sghohy-MuiButtonBase-root-MuiButton-root"
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium css-1yaqcqa-MuiButtonBase-root-MuiButton-root"
+        data-testid="btn-start-new-game"
         href="/game"
         tabindex="0"
       >
-        Start new game
+        Start
         <span
           class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
         />

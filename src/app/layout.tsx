@@ -19,18 +19,23 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: ReadonlyPropsWithChildren) {
   return (
-    <html lang="en">
+    <Box component="html" lang="en">
       <Box
         className={inter.className}
         component="body"
         sx={{
+          margin: 0,
           overflowX: "hidden",
           maxWidth: "100vw",
-          height: "100%",
+          minHeight: "100vh",
+          px: "20%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
         }}
       >
         <Providers>{children}</Providers>
       </Box>
-    </html>
+    </Box>
   );
 }

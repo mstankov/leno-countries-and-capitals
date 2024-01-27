@@ -4,6 +4,7 @@ import { useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReadonlyPropsWithChildren } from "src/utils/types";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
+import { GameProvider } from "src/state/contexts/GameContext";
 
 export default function Providers({ children }: ReadonlyPropsWithChildren) {
   const [queryClient] = useState(
@@ -20,7 +21,7 @@ export default function Providers({ children }: ReadonlyPropsWithChildren) {
   return (
     <QueryClientProvider client={queryClient}>
       <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-        {children}
+        <GameProvider>{children}</GameProvider>
       </AppRouterCacheProvider>
     </QueryClientProvider>
   );

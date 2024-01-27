@@ -1,45 +1,67 @@
 import { Box, Button, Typography } from "@mui/material";
 import Link from "next/link";
+import { CORRECT_GUESS_POINTS, WRONG_GUESS_POINTS } from "src/api/constants";
 
 export default function Home() {
   return (
-    <Box
-      component="main"
-      sx={{
-        minHeight: "100vh",
-        padding: "6rem",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
+    <Box component="main" sx={{}}>
       <Box textAlign="center">
-        <Typography data-testid="home-page-title" variant="h1" fontWeight={600}>
+        <Typography data-testid="home-page-title" variant="h2" fontWeight={600}>
           Countries and Capitals
         </Typography>
         <Box display="flex" flexDirection="column" gap={1}>
-          <Box textTransform="uppercase" p={3} mt={5} border="1px solid white">
+          <Box
+            textTransform="uppercase"
+            p={3}
+            mt={5}
+            border="1px solid white"
+            borderRadius={4}
+          >
             <Typography variant="h4" mb={2}>
               Rules
             </Typography>
-            <Typography variant="body2">
+            <Typography variant="subtitle2">
               Match each country with its respective capital
             </Typography>
-            <Typography variant="body2">
-              The game lasts until all countries are matched with their capitals
+            <Typography variant="subtitle2">
+              The game lasts until all and capitals are matched
             </Typography>
-            <Box>
+            <Box
+              display="flex"
+              mt={2}
+              justifyContent="center"
+              alignItems="center"
+              flexDirection="column"
+            >
               <Typography variant="caption">
-                A correct match adds 7 points
+                A correct guess adds{" "}
+                <Typography
+                  component="span"
+                  variant="caption"
+                  color="green"
+                  fontWeight="bold"
+                >
+                  {CORRECT_GUESS_POINTS}
+                </Typography>{" "}
+                points
               </Typography>
               <Typography variant="caption">
-                An incorrect match subtracts 5 points
+                An incorrect guess subtracts{" "}
+                <Typography
+                  component="span"
+                  variant="caption"
+                  color="green"
+                  fontWeight="bold"
+                >
+                  {WRONG_GUESS_POINTS}
+                </Typography>{" "}
+                points
               </Typography>
             </Box>
           </Box>
         </Box>
       </Box>
-      <Box alignSelf="center" pt={4}>
+      <Box mt={4} display="flex" justifyContent="center">
         <Button
           data-testid="btn-start-new-game"
           LinkComponent={Link}
@@ -49,6 +71,7 @@ export default function Home() {
             height: 80,
             width: 200,
             fontSize: "1.5rem",
+            alignSelf: "center",
           }}
         >
           Start

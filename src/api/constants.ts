@@ -1,0 +1,4 @@
+export const CORRECT_GUESS_POINTS = 7;
+export const WRONG_GUESS_POINTS = 5;
+export const INITIAL_SCORE = 30;
+export const ITEM_REMOVE_DELAY_MILLISECONDS = 1000;

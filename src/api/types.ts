@@ -19,6 +19,6 @@ export type Capital =
   | "Warsaw";
 
 export type CountryDto = {
-  country: Country;
+  name: Country;
   capital: Capital;
 };
