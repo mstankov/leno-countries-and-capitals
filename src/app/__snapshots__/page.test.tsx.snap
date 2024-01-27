@@ -18,7 +18,7 @@ exports[`Home should match snapshot 1`] = `
         class="MuiBox-root css-1821gv5"
       >
         <div
-          class="MuiBox-root css-da1mpa"
+          class="MuiBox-root css-1lk7evk"
         >
           <h4
             class="MuiTypography-root MuiTypography-h4 css-pxw7rc-MuiTypography-root"
@@ -33,7 +33,7 @@ exports[`Home should match snapshot 1`] = `
           <h6
             class="MuiTypography-root MuiTypography-subtitle2 css-ati914-MuiTypography-root"
           >
-            The game lasts until all countries are matched with their capitals
+            The game lasts until all and capitals are matched
           </h6>
           <div
             class="MuiBox-root css-r9sjpm"
@@ -44,7 +44,7 @@ exports[`Home should match snapshot 1`] = `
               A correct guess adds
                
               <span
-                class="MuiTypography-root MuiTypography-caption css-yzvdu9-MuiTypography-root"
+                class="MuiTypography-root MuiTypography-caption css-1yjifjv-MuiTypography-root"
               >
                 7
               </span>
@@ -57,7 +57,7 @@ exports[`Home should match snapshot 1`] = `
               An incorrect guess subtracts
                
               <span
-                class="MuiTypography-root MuiTypography-caption css-yzvdu9-MuiTypography-root"
+                class="MuiTypography-root MuiTypography-caption css-1yjifjv-MuiTypography-root"
               >
                 5
               </span>
